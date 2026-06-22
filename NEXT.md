@@ -10,4 +10,4 @@
 -
 ## producer-loop last run 2026-06-16T14:06:10-04:00
 - branch: main  level: 3  iters attempted: up to 1
-- next: inspect /home/user/.local/state/stax/producer-inbox/2026-06-16.log for merges/reverts/noops
+- next: review the stax-producer-loop inbox for merges/reverts/noops
