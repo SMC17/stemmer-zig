@@ -1,5 +1,7 @@
 # stemmer-zig
 
+Try the [self-contained task](docs/SELF_SERVE.md): `zig build demo`.
+
 Porter (1980) and Snowball (Porter2) English stemmers in Zig 0.16.
 
 Extracted from a private research repo; the algorithms are unchanged from

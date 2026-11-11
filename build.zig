@@ -33,4 +33,15 @@ pub fn build(b: *std.Build) void {
     if (b.args) |args| vocab_run.addArgs(args);
     const vocab_step = b.step("vocab", "Emit word\\tstem TSV for the Brown vocabulary fixture");
     vocab_step.dependOn(&vocab_run.step);
+    const demo = b.addExecutable(.{
+        .name = "demo",
+        .root_module = b.createModule(.{
+            .root_source_file = b.path("examples/selfserve.zig"),
+            .target = target,
+            .optimize = optimize,
+            .imports = &.{.{ .name = "lib", .module = stemmer_mod }},
+        }),
+    });
+    b.installArtifact(demo);
+    b.step("demo", "Run a small Porter and Snowball task").dependOn(&b.addRunArtifact(demo).step);
 }
