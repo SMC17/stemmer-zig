@@ -1,0 +1,54 @@
+{
+  "schema": 1,
+  "project": "stemmer-zig",
+  "visibility": "private",
+  "systems": [
+    "Darwin",
+    "Linux"
+  ],
+  "required_files": [
+    "README.md",
+    "LICENSE"
+  ],
+  "task": "Stem running and cats with both Porter and Snowball.",
+  "steps": [
+    {
+      "name": "unit suite",
+      "argv": [
+        "zig",
+        "build",
+        "test",
+        "-Doptimize=ReleaseSafe",
+        "--summary",
+        "all"
+      ],
+      "minimum_tests": 20
+    },
+    {
+      "name": "install fixture",
+      "argv": [
+        "zig",
+        "build",
+        "-Doptimize=ReleaseSafe"
+      ]
+    },
+    {
+      "name": "fixture task",
+      "argv": [
+        "zig",
+        "build",
+        "demo",
+        "-Doptimize=ReleaseSafe"
+      ],
+      "contains": "running -> run"
+    }
+  ],
+  "bundle_paths": [
+    "zig-out/bin/demo"
+  ],
+  "limitations": [
+    "Finite fixture acceptance; no new benchmark, coverage or hardware-parity claim.",
+    "Visibility is unchanged. Public release requires a deliberate source/history and license review.",
+    "Hosted Actions have not executed while the billing restriction remains."
+  ]
+}
