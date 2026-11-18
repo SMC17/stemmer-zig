@@ -1,5 +1,7 @@
 # stemmer-zig
 
+**[Status](STATUS.md) · [Roadmap](ROADMAP.md) · [Contributing](CONTRIBUTING.md) · [Issues](https://github.com/SMC17/stemmer-zig/issues) · [Public roadmap](https://github.com/users/SMC17/projects/16)**
+
 Try the [self-contained task](docs/SELF_SERVE.md): `zig build demo`.
 
 Porter (1980) and Snowball (Porter2) English stemmers in Zig 0.16.
